@@ -21,6 +21,10 @@ export class LegendaryWarrior {
     @inject('Weapon') public readonly secondWeapon: Weapon,
     @inject('Weapon') public readonly thirdWeapon: Weapon,
   ) {}
+
+  public attack(): void {
+    console.log(`Attacking with weapons that have damages: ${this.firstWeapon.damage}, ${this.secondWeapon.damage}, ${this.thirdWeapon.damage}`)
+  }
 }
 
 const container: Container = new Container();
@@ -32,19 +36,21 @@ const secondKatana: Weapon = container.get<Weapon>('Weapon');
 
 const legendaryWarrior: LegendaryWarrior = container.get(LegendaryWarrior);
 
-// Returns false
-const isSameKatana: boolean = firstKatana === secondKatana;
-console.log('isSameKatana', isSameKatana);
+legendaryWarrior.attack();
 
-// Returns true
-const warriorHasSameKatana: boolean =
-  legendaryWarrior.firstWeapon === legendaryWarrior.secondWeapon &&
-  legendaryWarrior.secondWeapon === legendaryWarrior.thirdWeapon;
-console.log('warriorHasSameKatana', warriorHasSameKatana);
+// // Returns false
+// const isSameKatana: boolean = firstKatana === secondKatana;
+// console.log('isSameKatana', isSameKatana);
 
-console.log('legendaryWarrior.firstWeapon.damage', legendaryWarrior.firstWeapon.damage);
-console.log('legendaryWarrior.secondWeapon.damage', legendaryWarrior.secondWeapon.damage);
-console.log('legendaryWarrior.thirdWeapon.damage', legendaryWarrior.thirdWeapon.damage);
+// // Returns true
+// const warriorHasSameKatana: boolean =
+//   legendaryWarrior.firstWeapon === legendaryWarrior.secondWeapon &&
+//   legendaryWarrior.secondWeapon === legendaryWarrior.thirdWeapon;
+// console.log('warriorHasSameKatana', warriorHasSameKatana);
+
+// console.log('legendaryWarrior.firstWeapon.damage', legendaryWarrior.firstWeapon.damage);
+// console.log('legendaryWarrior.secondWeapon.damage', legendaryWarrior.secondWeapon.damage);
+// console.log('legendaryWarrior.thirdWeapon.damage', legendaryWarrior.thirdWeapon.damage);
 
 
 

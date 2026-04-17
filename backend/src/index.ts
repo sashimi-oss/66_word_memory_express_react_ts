@@ -1,6 +1,6 @@
 import express from "express";
 import type { Request, Response } from "express";
-import router from "./routers";
+import praRouter from "./routers";
 import cors from "cors";
 
 const app = express();
@@ -14,12 +14,12 @@ app.use(cors({
   credentials: true
 }));
 
-app.get("/", (req: Request, res:Response) => {
-  res.send("Hello World!");
-});
+// app.get("/", (req: Request, res:Response) => {
+//   res.send("Hello World!");
+// });
 
 // マウンティング？してるらしい
-app.use("/router", router);
+app.use("/", praRouter);
 
 
 app.listen(8000, () => {
