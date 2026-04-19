@@ -1,5 +1,5 @@
 import type { Request, Response, Router } from "express";
-import { Container, injectable, inject } from "inversify";
+import { injectable, inject } from "inversify";
 import { IController } from "./interface/IController";
 import { WordService } from "../service/WordService";
 
