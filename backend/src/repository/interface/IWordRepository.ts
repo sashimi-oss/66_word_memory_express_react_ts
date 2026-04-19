@@ -1,4 +1,4 @@
 export interface IWordRepository {
-    getWordList(): Promise<any>;
+    getWordList(): Promise<Array<any>>;
     getWord(): Promise<any>;
 }
