@@ -1,0 +1,1 @@
+insert into famous_word (user_id, word) values (1, 'なんか名言');
